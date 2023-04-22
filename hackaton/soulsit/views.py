@@ -14,7 +14,6 @@ from django.views import View
 from django.contrib.auth import get_user_model
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 import openai, os
-## from dotenv import load_dotenv
 
 def home(request):
     return render(request, 'main.html')
