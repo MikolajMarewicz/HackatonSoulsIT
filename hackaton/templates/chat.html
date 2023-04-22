@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{%load static%}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -59,7 +60,7 @@
             <div class="row">
               <!-- kolumna z zdjęciem i opisem -->
               <div class="col-md-4">
-                <img src="sciezka/do/zdjecia.jpg" alt="zdjęcie profilowe" class="img-fluid mb-3">
+                <img src="{%static 'sciezka/do/zdjecia.jpg'%}" alt="zdjęcie profilowe" class="img-fluid mb-3"> <!--nie robimy db zdjęci profilowych-->
                 <h2>Imię i nazwisko</h2>
                 <p>Opis użytkownika.</p>
               </div>
