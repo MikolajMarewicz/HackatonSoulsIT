@@ -36,7 +36,7 @@
         <div class="sidebar-sticky">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link" href="#">Profile</a>
+              <a class="nav-link" href="user.html">Profile</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="#">Projects</a>
@@ -52,44 +52,145 @@
       </nav>
       <!-- zawartość strony -->
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-        <h1>Hello again [name]<p id="username"></p>! <!--możemy wstawc tu imię użytkownika--> </h1>
-        <p>Tu umieszczona jest zawartość strony głównej.</p>
 
         <div class="container mt-5">
-            <div class="row">
-              <!-- kolumna z zdjęciem i opisem -->
-              <div class="col-md-4">
-                <img src="sciezka/do/zdjecia.jpg" alt="zdjęcie profilowe" class="img-fluid mb-3">
-                <h2>Imię i nazwisko</h2>
-                <p>Opis użytkownika.</p>
-              </div>
-              <!-- kolumna z umiejętnościami -->
-              <div class="col-md-4">
-                <h2>Umiejętności</h2>
-                <ul class="list-group">
-                  <li class="list-group-item">Umiejętność 1</li>
-                  <li class="list-group-item">Umiejętność 2</li>
-                  <li class="list-group-item">Umiejętność 3</li>
-                </ul>
-              </div>
-              <!-- kolumna z projekami -->
-              <div class="col-md-4">
-                <h2>Projekty</h2>
-                <ul class="list-group">
-                  <li class="list-group-item"><a href="#">Projekt 1</a></li>
-                  <li class="list-group-item"><a href="#">Projekt 2</a></li>
-                  <li class="list-group-item"><a href="#">Projekt 3</a></li>
-                </ul>
-              </div>
-            </div>
-            <!-- przycisk do czatu -->
-            <div class="row mt-3">
-              <div class="col-md-12 text-center">
-                <a href="chat.html" class="btn btn-primary">Text me</a>
-              </div>
-            </div>
-          </div>          
+          <div class="row">
 
+            <!--sekcja główna-->
+            <div class="col-md-8">
+              <div class="container mt-5">
+                <div class="row flex-column">
+
+                  <!--o uzytkowniku-->
+                  <div class="col-md-12">
+                    <img src="static/graphic/Image-photo-icon-Graphics-13989898-1.jpg" alt="background photo" class="img-fluid mb-3">
+                    <!--<img style="border-radius: 50%" src="static/graphic/Image-photo-icon-Graphics-13989898-1.jpg" alt="profile photo" class="profilowe">-->
+
+                    <div class="container mt-5">
+                      <div class="row">
+                        <div class="col-md-8">
+                          <div class="col-md-12">
+                            <!--<img style="border-radius: 50%" src="static/graphic/Image-photo-icon-Graphics-13989898-1.jpg" alt="profile photo" class="profilowe">-->
+                            <h1>Hello again [name]!<p id="username"></p> <!--możemy wstawc tu imię użytkownika--> </h1>
+                          </div>
+                          
+                          <!--Kursy i inne-->
+                          <div class="container mt-5">
+                            <div class="col-md-12">
+                              <h2>Courses</h2>
+                              <div class="container">
+                                <div class="row flex-column">
+                                  <div class="col-md-12">
+                                    <h3>Pick up where you left off</h3>
+                                    <ul class="list-group">
+                                      <li class="list-group-item">Course 1</li>
+                                    </ul>
+                                  </div>
+                                  <div class="col-md-12">
+                                    <h3>Recomended for you</h3>
+                                    <ul class="list-group">
+                                      <li class="list-group-item">Course 1</li>
+                                      <li class="list-group-item">Course 2</li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!--Zaproszenia i inne-->
+                          <div class="container mt-5">
+                            <div class="row flex-column">
+
+                              <div class="col-md-12">
+                                <h2>Institutions</h2>
+                                  <ul class="list-group">
+                                    <li class="list-group-item">Institution 1</li>
+                                    <li class="list-group-item">Institution 2</li>
+                                  </ul>
+                              </div>
+
+                              <div class="col-md-12">
+                                <h2>About</h2>
+                                <p>[About user]</p>
+                              </div>
+
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                    
+                    </div>
+
+                  </div>
+               </div>
+              </div>
+            </div>
+
+            <!--sekcja z info-->
+            <div class="col-md-4">
+              <div class="cointainer mt-5">
+                <div class="row flex-column">
+                  <div class="col-md-12">
+                    <h2>Status</h2>
+                    <p>[status]</p>
+                  </div>
+
+                <div class="col-md-12">
+                  <h2>Badges</h2>
+                    <ul class="list-group">
+                      <li class="list-group-item">Badge 1</li>
+                      <li class="list-group-item">Badge 2</li>
+                    </ul>
+                </div>
+                <div class="col-md-12">
+                  <h2>Certificates</h2>
+                  <ul class="list-group">
+                    <li class="list-group-item">Certificate 1</li>
+                    <li class="list-group-item">Certificate 2</li>
+                  </ul>
+                </div>
+                  <!--skille i technologie-->
+                  <div class="col-md-12">
+                    <div class="cointainer mt-5">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h2>Skills</h2>
+                          <ul class="list-group">
+                            <li class="list-group-item">Skill 1</li>
+                            <li class="list-group-item">Skill 2</li>
+                            <li class="list-group-item">Skill 3</li>
+                          </ul>
+                        </div>
+                        <div class="col-md-6">
+                          <h2>Technologies</h2>
+                          <ul class="list-group">
+                            <li class="list-group-item">Technology 1</li>
+                            <li class="list-group-item">Technology 2</li>
+                            <li class="list-group-item">Technology 3</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-12">
+                    <h2>Finished projects</h2>
+                    <ul class="list-group">
+                      <li class="list-group-item">Project 1</li>
+                      <li class="list-group-item">Project 2</li>
+                      <li class="list-group-item">Project 3</li>
+                    </ul>
+                  </div>
+      
+      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   </div>
