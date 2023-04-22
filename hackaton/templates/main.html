@@ -15,7 +15,7 @@
         <!-- Menu - responsive -->
       <nav class="navbar navbar-expand-lg fixed-top" style="background-color:#0491b4">
          <div class="container" style ="height:100px;">
-            <a class="btn btn-login btn-active" href="{% url "home" %}"><img src="logo.png" alt="logo" style="width:100px; height:100px"/></a>
+            <a class="btn btn-login btn-active" href="{% url "home" %}"><img src="{% static "soulsit/Logo.png" %}" alt="logo" style="width:100px; height:100px"/></a>
                <ul class="navbar-nav">
                   {% if user.is_authenticated %}
                   <li class="nav-item"><a class="btn btn-login btn-active" href="{% url "logout" %}">Logout</a></li>
