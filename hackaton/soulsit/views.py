@@ -13,7 +13,8 @@ from .forms import UserRegisterForm
 from django.views import View 
 from django.contrib.auth import get_user_model
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
-
+import openai, os
+from dotenv import load_dotenv
 
 def home(request):
     return render(request, 'main.html')
@@ -78,3 +79,28 @@ def profile(request):
     }
 
     return render(request, 'profile.html', context)
+
+#################chatbot##########
+load_dotenv()
+
+api_key = os.getenv('OPENAI_KEY', None)
+openai.api_key = api_key
+
+def chatbot(request):
+    chatbot_response = None
+    if api_key is not None and request.method == 'POST':
+        AIuser_input = request.POST.get('AIuser_input')
+        prompt = "In your project, based on the description '" + AIuser_input + "', what specialist roles should you have?",
+        
+        response = openai.Completion.create(
+            engine = 'text-davinci-003',
+            prompt = prompt,
+            max_tokens=256,
+            stop = None,
+            temperature = 0.5
+        ) 
+        print(response)
+
+        chtextatbot_response = response["choices"][0]["text"]
+    return render(request, 'chatbot.html', {"response": chatbot_response})
+########################################################################
