@@ -29,5 +29,6 @@ urlpatterns = [
     path('register/', user_view.register, name ='register'),
     path('profile/', user_view.profile, name='profile'),
     path('projects/', user_view.project, name='projects'),
+    path('articlemain/', user_view.articlemain, name='articlemain'),
     path('article1', user_view.article1, name='article1'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
