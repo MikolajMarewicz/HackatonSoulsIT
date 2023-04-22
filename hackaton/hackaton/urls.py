@@ -28,7 +28,10 @@ urlpatterns = [
     path('logout/', auth.LogoutView.as_view(template_name ='main.html'), name ='logout'),
     path('register/', user_view.register, name ='register'),
     path('profile/', user_view.profile, name='profile'),
-    path('projects/', user_view.project, name='projects'),
+    path('projects/', user_view.projects, name='projects'),
     path('articlemain/', user_view.articlemain, name='articlemain'),
-    path('article1/', user_view.article1, name='article1'),
+    path('articlemain/article1/', user_view.article1, name='article1'),
+    path('project/', user_view.project, name="project" ),
+    path('articlemain/badgesmain', user_view.badgesmain, name="badgesmain"),
+    path('badgesmain/', user_view.badgesmain, name="badgesmain" )
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
