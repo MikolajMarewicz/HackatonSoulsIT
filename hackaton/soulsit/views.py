@@ -14,7 +14,7 @@ from django.views import View
 from django.contrib.auth import get_user_model
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 import openai, os
-from dotenv import load_dotenv
+## from dotenv import load_dotenv
 
 def home(request):
     return render(request, 'main.html')
@@ -81,7 +81,6 @@ def profile(request):
     return render(request, 'profile.html', context)
 
 #################chatbot##########
-load_dotenv()
 
 api_key = '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'
 openai.api_key = api_key
