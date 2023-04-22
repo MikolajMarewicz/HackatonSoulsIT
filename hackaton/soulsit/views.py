@@ -105,3 +105,10 @@ def chatbot(request):
 
 def project(request):
     return render(request, 'projects.html')
+
+##articel###
+def articlemain(request):
+    return render(request, 'articlemain.html')
+
+def article1(request):
+    return render(request, 'article1.html')
