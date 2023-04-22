@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- link do pliku CSS Bootstrapa -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Forum - Strona Główna</title>
+</head>
+<body>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Forum</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Strona Główna <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Ogłoszenia</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Rejestracja</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Logowanie</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- kontener główny -->
+  <div class="container-fluid">
+    <div class="row">
+      <!-- zawartość strony -->
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+        <h1>Forum - Strona Główna</h1>
+        <!-- formularz wyszukiwania -->
+        <form>
+          <div class="form-group">
+            <label for="search">Wyszukaj ochotników do projektu</label>
+            <input type="text" class="form-control" id="search" placeholder="Wpisz szukane słowo">
+          </div>
+          <button type="submit" class="btn btn-primary">Szukaj</button>
+        </form>
+        <hr>
+        <!-- lista wątków na forum -->
+        <h2>Lista wątków</h2>
+        <ul class="list-group">
+          <li class="list-group-item"><a href="#">Potrzebuję programisty do projektu e-commerce</a></li>
+          <li class="list-group-item"><a href="#">Poszukuję grafika do stworzenia logo dla start-upu</a></li>
+          <li class="list-group-item"><a href="#">Szukam UX designerki do stworzenia prototypu aplikacji mobilnej</a></li>
+        </ul>
+      </main>
+      <!-- sidebar -->
+      <nav class="col-md-3 col-lg-2 d-md-block bg

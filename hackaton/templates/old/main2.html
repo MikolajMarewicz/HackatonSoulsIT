@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta name="description" content="" />
+      <meta name="author" content="" />
+      <title>SoulsIT</title>
+      <!-- Custom CSS (includes Bootstrap 5.0)-->
+      <link href="css/styles.css" rel="stylesheet" />
+   </head>
+   <body>
+      <!-- Menu - responsive -->
+      <nav class="navbar navbar-expand-lg navbar-dark">
+         <div class="container">
+            <a class="navbar-brand" href="#">Miejsce na logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item"><a class="nav-link active" aria-current="page" href="login.html">Sign In</a></li>
+                  <li class="nav-item"><a class="btn btn-login btn-active" href="/register">Get Started</a></li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <!-- Page content-->
+      <div class="container">
+         <!-- Banner -->
+         <div class="row banner-container">
+            <!-- Banner - col1 -->
+            <div class="col-12 col-md-6 text-center">Tekst</div>
+            <!-- End -->
+            <!-- Banner - col2 -->
+            <div class="col-12 col-md-6 text-center">Obrazek</div>
+            <!-- End -->
+         </div>
+         <!-- Banner - end -->
+         <!-- Content -->
+         <div class="row text-center mt-5">
+            <h1>Centrum wiedzy</h1>
+            <div class="col-6 col-md-6 text-right"><button class="btn panel-btn btn-active" id="article" onclick="switchTab(this.id)">Button 1</button></div>
+            <div class="col-6 col-md-6 text-left"><button class="btn panel-btn btn-inactive" id="forum" onclick="switchTab(this.id)">Button 2</button></div>
+            <!-- Article -->
+            <div id="panel-article" class="panel">Artykuły</div>
+            <!-- Article - end -->
+            <!-- Forum  -->
+            <div id="panel-forum" class="panel" style="display: none">Forum</div>
+            <!-- Forum - end -->
+         </div>
+         <!-- Footer  -->
+         <div class="row text-center mt-5 footer">
+            <div class="col-12 col-md-5">
+               <ul>
+                  <ol>Menu 1</ol>
+                  <ol>Menu 2</ol>
+                  <ol>Menu 3</ol>
+                  <ol>Menu 4</ol>
+               </ul>
+            </div>
+            <div class="col-12 col-md-2">
+               Grafika
+            </div>
+            <div class="col-12 col-md-5">
+               <ul>
+                  <ol>Menu 5</ol>
+                  <ol>Menu 6</ol>
+                  <ol>Menu 7</ol>
+                  <ol>Menu 8</ol>
+               </ul>
+            </div>
+         </div>
+         <!-- Footer - end  -->
+      </div>
+      <!-- Content - end -->
+      <!-- Bootstrap core JS-->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- JQuery CDN-->
+      <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+      <!-- Custom JS-->
+      <script src="js/scripts.js"></script>
+   </body>
+</html>
