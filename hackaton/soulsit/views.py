@@ -102,3 +102,6 @@ def chatbot(request):
         chtextatbot_response = response["choices"][0]["text"]
     return render(request, 'chatbot.html', {"response": chatbot_response})
 ########################################################################
+
+def project(request):
+    return render(request, 'projects.html')

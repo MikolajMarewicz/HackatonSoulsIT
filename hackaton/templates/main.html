@@ -19,6 +19,7 @@
                <ul class="navbar-nav">
                   {% if user.is_authenticated %}
                   <li class="nav-item"><a class="btn btn-login btn-active" href="{% url "logout" %}">Logout</a></li>
+                  <li class="nav-item"><a class="btn btn-login btn-active" href="{% url "projects" %}">Projects</a></li>
                   <li class="nav-item"><a class="btn btn-login btn-active" href="{% url "profile" %}">Profile</a></li>
             {% else %}
                   <li class="nav-item"><a class="btn btn-login btn-active" href="#">Articles</a></li>
