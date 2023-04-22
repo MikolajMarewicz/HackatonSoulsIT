@@ -103,7 +103,7 @@ def chatbot(request):
     return render(request, 'chatbot.html', {"response": chatbot_response})
 ########################################################################
 
-def project(request):
+def projects(request):
     return render(request, 'projects.html')
 
 ##articel###
@@ -112,3 +112,10 @@ def articlemain(request):
 
 def article1(request):
     return render(request, 'article1.html')
+
+def project(request):
+    return render(request, 'project.html')
+
+def badgesmain(request):
+    return render(request, 'badgesmain.html')
+
