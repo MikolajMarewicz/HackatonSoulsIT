@@ -83,7 +83,7 @@ def profile(request):
 #################chatbot##########
 load_dotenv()
 
-api_key = os.getenv('OPENAI_KEY', None)
+api_key = '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'
 openai.api_key = api_key
 
 def chatbot(request):
