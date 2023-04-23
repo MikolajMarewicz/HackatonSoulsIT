@@ -84,7 +84,7 @@ def profile(request):
 
 #################chatbot##########
 
-api_key = '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'
+api_key = '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'
 openai.api_key = api_key
 
 def chatbot(request):
