@@ -1,6 +1,6 @@
 from django.db import models
 from django.conf import settings
-from django.contrib.auth.models import User, AbstractUser
+from django.contrib.auth.models import AbstractUser
 from PIL import Image
 
 
@@ -12,7 +12,7 @@ class Profile(AbstractUser):
     def __str__(self):
         return f'{self.username} Profile' #show how we want it to be displayed
     
-     # Override the save method of the model
+     #Override the save method of the model
     # def save(self):
     #     super().save()
 
