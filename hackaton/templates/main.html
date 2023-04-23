@@ -22,13 +22,13 @@
                   <li class="nav-item"><a class="btn btn-login btn-active" href="{% url "projects" %}">Projects</a></li>
                   <li class="nav-item"><a class="btn btn-login btn-active" href="{% url "profile" %}">Profile</a></li>
             {% else %}
-                  <li class="nav-item"><a class="btn btn-login btn-active" href="articlemain">Articles</a></li>
+                  <li class="nav-item"><a class="btn btn-login btn-active" href="{% url "articlemain" %}">Articles</a></li>
                   <li class="nav-item"><a class="btn btn-login btn-active" href="{% url "login" %}">Log in</a></li>
                   <li class="nav-item"><a class="btn btn-login btn-active" href="{% url "register" %}">Sign in</a></li>
             {% endif %}
-                    <li class="nav-item"><a class="btn btn-login btn-active" href="articlemain">Articles</a></li>
+                    <li class="nav-item"><a class="btn btn-login btn-active" href="{% url "articlemain" %}">Articles</a></li>
                     <li class="nav-item"><a class="btn btn-login btn-active" href="#footer">Contact</a></li>
-                    <li class="nav-item"><a class="btn btn-login btn-active" href="badgesmain">Badges</a></li>
+                    <li class="nav-item"><a class="btn btn-login btn-active" href="{% url "badgesmain" %}">Badges</a></li>
                </ul>
             </div>
       </nav>
@@ -72,7 +72,7 @@
                   <p> Eum quam harum rem quae praesentium est voluptatem porro! Est numquam fugiat a expedita magni est illo velit!<br>
                      Et quas omnis aut culpa amet eos voluptatem necessitatibus cum doloribus expedita. </p>
                   <div>
-                     <a class="btn btn-login btn-active" href="article3.html">Read more</a>
+                     <a class="btn btn-login btn-active" href="{% url 'article3' %}">Read more</a>
                   </div>
         </div>
         </div>
@@ -93,9 +93,9 @@
          <input type="text" class="form-control" name="AIuser_input">        
          <img src="{% static 'soulsit/chatbox.png' %}" alt="chatbox" style="width:100px; hight:100px;" class="fixed-bottom"/>
    </form>
-   {% if chtextatbot_response %}
+   {% if response %}
     <div>
-        {{ chtextatbot_response | safe }}
+        {{ response | safe }}
     </div>
 {% endif %}            
     </body>

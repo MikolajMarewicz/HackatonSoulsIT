@@ -13,7 +13,10 @@ from .forms import UserRegisterForm
 from django.views import View 
 from django.contrib.auth import get_user_model
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from django import template
 import openai, os
+from flask import Flask, render_template, request
+
 
 def home(request):
     return render(request, 'main.html')
@@ -81,7 +84,7 @@ def profile(request):
 
 #################chatbot##########
 
-api_key = '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'
+api_key = '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'
 openai.api_key = api_key
 
 def chatbot(request):
@@ -99,8 +102,46 @@ def chatbot(request):
         ) 
         print(response)
 
-        chtextatbot_response = response["choices"][0]["text"]
+        chatbot_response = response["choices"][0]["text"]
     return render(request, 'chatbot.html', {"response": chatbot_response})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ########################################################################
 
 def projects(request):
