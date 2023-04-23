@@ -1,0 +1,104 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<link rel="shortcut icon" href="logo.png">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projects</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="css/styles.css" rel="stylesheet"/>
+    </head>
+  
+  <body>
+    
+          <label class="">Nazwa projektu</label>
+          <input name ="project_name" type="text" class="" id="project_name" placeholder="fajny projekt" style="">
+
+          <label class="">Budżet</label>
+          <input name ="budget" type="number" class="" id="budget"  placeholder="1 000 000" style="">
+
+          <label class="">Project owner </label>
+          <select name="owner" id="owner" >
+            <option disabled selected value>Wybierz użytkownika</option>
+            {% for i in profiles %}
+              <option value="{{i.id}}">{{i.first_name}} {{i.last_name}}</option>
+            {% endfor %}
+          </select>
+
+          <label class="">Project Users</label>
+          <select name="users" id="users" multiple >
+            <option disabled selected value>Wybierz użytkowników</option>
+            {% for i in profiles %}
+              <option value="{{i.id}}">{{i.first_name}} {{i.last_name}}</option>
+            {% endfor %}
+          </select>
+          
+          <button class="login-button" id="create"  disabled>stwórz projekt</button>   
+          <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+            <script>
+            $("#project_name").on("input", function() {
+              if ($("#users").val().length != 0 && $("#budget").val() && $("#owner").val() && $("#project_name").val()) {
+                $("#create").prop("disabled", false)
+              
+              } else {
+                $("#create").prop("disabled", true)
+              }
+              
+            })
+            $("#budget").on("input", function() {
+              if ($("#users").val().length != 0  && $("#budget").val() && $("#owner").val() && $("#project_name").val()) {
+                $("#create").prop("disabled", false)
+              
+              } else {
+                $("#create").prop("disabled", true)
+              }
+              
+            })
+            /* Undisable users if option in owner is selected */ 
+            $("#owner").on("input", function() {
+              if ($("#users").val().length != 0 && $("#budget").val() && $("#owner").val() && $("#project_name").val()) {
+                $("#create").prop("disabled", false)
+              
+              } else {
+                $("#create").prop("disabled", true)
+              }
+              
+            })
+            /* Undisable create button if option in users is selected */
+            $("#users").on("input", function() {
+              if ($("#users").val().length != 0 && $("#budget").val() && $("#owner").val() && $("#project_name").val()) {
+                $("#create").prop("disabled", false)
+              
+              } else {
+                $("#create").prop("disabled", true)
+              }
+              
+            })
+
+            $("#create").on("click", function() {
+              var project_name = $("#project_name").val()
+              var budget = $("#budget").val()
+              var owner = $("#owner").val()
+              var users = $("#users").val()
+              console.log(project_name, budget, owner, users)
+              $.ajax({
+                url: "{% url 'soulsit:create_project' %}",
+                type: "POST",
+                data: {
+                  project_name: project_name,
+                  budget: budget,
+                  owner: owner,
+                  users: users,
+                  csrfmiddlewaretoken: '{{ csrf_token }}'
+                },
+                success: function(response) {
+                  alert("project created")
+                }
+              })
+            })
+            
+            
+          </script>
+  </body>
+</html>

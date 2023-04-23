@@ -17,16 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from soulsit import views as user_view
-from django.contrib.auth import views as auth
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', user_view.home, name='home'),
-    path('login/', user_view.Login, name ='login'),
-    path('logout/', auth.LogoutView.as_view(template_name ='main.html'), name ='logout'),
-    path('register/', user_view.register, name ='register'),
-    path('profile/', user_view.profile, name='profile'),
-    path('projects/', user_view.project, name='projects'),
+    path('', include(('soulsit.urls', 'soulsit'), namespace='soulsit')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

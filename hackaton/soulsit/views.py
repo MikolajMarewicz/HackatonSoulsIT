@@ -14,6 +14,8 @@ from django.views import View
 from django.contrib.auth import get_user_model
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 import openai, os
+from .models import Project, Profile
+from django.http import JsonResponse
 
 def home(request):
     return render(request, 'main.html')
@@ -48,10 +50,10 @@ def Login(request):
         user = authenticate(request, username = username, password = password)
         if user is not None:
             form = login(request, user)
-            return redirect('home')
+            return redirect('soulsit:home')
         else:
-            messages.info(request, f'account done not exist plz sign in')
-            return redirect('register')
+            messages.info(request, f'account dont exist plz sign in')
+            return redirect('soulsit:register')
     form = AuthenticationForm()
     return render(request, 'login.html', {'form':form, 'title':'log in'})
 
@@ -104,4 +106,32 @@ def chatbot(request):
 ########################################################################
 
 def project(request):
-    return render(request, 'projects.html')
+    zmienna = Project.objects.all()
+    return render(request, 'projects.html',
+    {"zmienna":zmienna})
+
+import json
+
+def createproject(request):
+    if request.method == "POST":
+        print(
+            request.POST["project_name"],
+            request.POST["budget"],
+            request.POST["owner"],
+            request.POST.getlist("users[]"),
+        )
+        a = Project(
+            project_name = request.POST["project_name"],
+            project_budget = request.POST["budget"],
+            project_owner = Profile.objects.get(id=request.POST["owner"])
+        )
+        a.save()
+        a.project_users.add(
+           *tuple(request.POST.getlist("users[]"))
+        )
+        a.save()
+        return JsonResponse({"success": "True"})
+    elif request.method == "GET":
+        return render(request, "createproject.html", {
+            "profiles": Profile.objects.all()
+        })
