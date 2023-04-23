@@ -1,40 +1,86 @@
-<!doctype html>
 {% load static %}
+<!doctype html>
+
 <html lang="en">
-<link rel="shortcut icon" href="logo.png">
+<link rel="shortcut icon" href="{% static 'soulsit/Logo.png' %}">
     <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Projects</title>
+    <title>Create project</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="css/styles.css" rel="stylesheet"/>
     </head>
   
-  <body>
-    
-          <label class="">Nazwa projektu</label>
-          <input name ="project_name" type="text" class="" id="project_name" placeholder="fajny projekt" style="">
-
-          <label class="">Budżet</label>
+   <body>
+        <!-- Menu - responsive -->
+      <nav class="navbar navbar-expand-lg fixed-top" style="background-color:#0491b4">
+         <div class="container" style ="height:100px;">
+            <a class="btn btn-login btn-active" href="{% url "soulsit:home" %}"><img src="{% static "soulsit/Logo.png" %}" alt="logo" style="width:100px; height:100px"/></a>
+               <ul class="navbar-nav">
+                  {% if user.is_authenticated %}
+                  <li class="nav-item"><a class="btn btn-login btn-active" href="{% url "soulsit:logout" %}">Logout</a></li>
+                  <li class="nav-item"><a class="btn btn-login btn-active" href="{% url "soulsit:projects" %}">Projects</a></li>
+                  <li class="nav-item"><a class="btn btn-login btn-active" href="{% url "soulsit:profile" %}">Profile</a></li>
+            {% else %}
+                  <li class="nav-item"><a class="btn btn-login btn-active" href="#">Articles</a></li>
+                  <li class="nav-item"><a class="btn btn-login btn-active" href="{% url "soulsit:login" %}">Log in</a></li>
+                  <li class="nav-item"><a class="btn btn-login btn-active" href="{% url "soulsit:register" %}">Sign in</a></li>
+            {% endif %}
+                    <li class="nav-item"><a class="btn btn-login btn-active" href="articlemain">Articles</a></li>
+                    <li class="nav-item"><a class="btn btn-login btn-active" href="#footer">Contact</a></li>
+                    <li class="nav-item"><a class="btn btn-login btn-active" href="badgesmain">Badges</a></li>
+               </ul>
+            </div>
+      </nav>
+               <div class="container" style="padding-top:150px; padding-bottom:30px">
+   <h1>Create a project</h1> 
+                   <hr style="color:#0491b4">
+    <!--Formularz-->
+                   <div class="row align-items-end" style="padding-top:30px">
+    <div class="col">
+          <label class="" style="font-size:20px">Project Name</label>
+    </div>
+    <div class="col">
+          <input name ="project_name" type="text" class="" id="project_name" placeholder="Choose name" style="">
+    </div>
+           </div>            
+            <div class="row align-items-end" style="padding-top:30px">
+    <div class="col">                   
+          <label class="" style="font-size:20px">Budget</label>
+    </div>
+    <div class="col">    
           <input name ="budget" type="number" class="" id="budget"  placeholder="1 000 000" style="">
-
-          <label class="">Project owner </label>
+    </div>
+          </div>     
+                   
+                   <div class="row align-items-end" style="padding-top:30px">
+    <div class="col">                
+          <label class="" style="font-size:20px">Project Owner</label>
+        </div>
+        <div class="col">                
           <select name="owner" id="owner" >
-            <option disabled selected value>Wybierz użytkownika</option>
+            <option disabled selected value>Choose member</option>
             {% for i in profiles %}
               <option value="{{i.id}}">{{i.first_name}} {{i.last_name}}</option>
             {% endfor %}
           </select>
-
-          <label class="">Project Users</label>
+            </div>
+            </div>
+                   <div class="row align-items-end" style="padding-top:30px">
+    <div class="col">
+          <label class="" style="font-size:20px">Project Members</label>
+        </div>
+    <div class="col">                        
           <select name="users" id="users" multiple >
-            <option disabled selected value>Wybierz użytkowników</option>
+            <option disabled selected value>choose members</option>
             {% for i in profiles %}
               <option value="{{i.id}}">{{i.first_name}} {{i.last_name}}</option>
             {% endfor %}
           </select>
+    </div>
+        </div>
           
-          <button class="login-button" id="create"  disabled>stwórz projekt</button>   
+          <button class="login-button" id="create"  disabled>Create project</button>   
           <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
             <script>
             $("#project_name").on("input", function() {
@@ -100,5 +146,28 @@
             
             
           </script>
-  </body>
+     <!-- Chatbox -->
+   <form method="post">
+      {% csrf_token %}
+         <input type="text" class="form-control" name="AIuser_input">        
+         <img src="{% static 'soulsit/chatbox.png' %}" alt="chatbox" style="width:100px; hight:100px;" class="fixed-bottom"/>
+   </form>
+   {% if chtextatbot_response %}
+    <div>
+        {{ chtextatbot_response | safe }}
+    </div>
+{% endif %}  
+                   </div>
+    </body>
+    
+    <div id="footer" style="background-color:#0491b4; padding:20px; text-align: center; width: 100%">
+        <a class="btn btn-login btn-active" href="https://www.datacamp.com"><img src="{% static "soulsit/partner1.png" %}" alt="Logo DataCamp" style="width:100px; height:50px"/></a>
+        <a class="btn btn-login btn-active" href="https://swps.pl"><img src="{% static "soulsit/partner2.png" %}" alt="Logo SWPS" style="width:150px; height:50px"/></a>
+        <a class="btn btn-login btn-active" href="https://www.coursera.org"><img src="{% static "soulsit/partner3.png" %}" alt="Logo Coursera" style="width:100px; height:50px"/></a>
+        <p style="margin-top:20px">SoulsIT Sp.z o.o.<br>
+        Chodakowska 19/31, 03-815 Warszawa<br>
+        +48 123 456 789 <br><a href = "mailto: abc@example.com">abc@example.com</a> </p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </html>
+
