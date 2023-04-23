@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-
+{% load static %}
 <html lang="en">
     <link rel="shortcut icon" href="{% static 'soulsit/Logo.png' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 <head>
+    <div style="text-align: center; width: 100%">
+        <a class="btn btn-login btn-active" href="{% url "soulsit:home" %}"><img src="{% static "soulsit/Logo.png" %}" alt="Logo" style="width:200px; height:200px"/></a>
+     </div> 
     <meta charset="UTF-8">
     <title>OPEN AI TEXT DAVINICI 003</title>
 </head>
 <body>
-    <h1>OPEN AI TEXT DAVINICI 003</h1>
-    <form  method="post">
+    <h3 style="text-align:center">OPEN AI TEXT DAVINICI 003</h3>
+    <form  method="post" style="padding-bottom:30px; text-align:center">
         {% csrf_token %}
         <label for="AIuser_input">Enter your input:</label>
         <input type="text" id="AIuser_input" name="AIuser_input">
@@ -26,7 +29,6 @@
       <form method="post">
         {% csrf_token %}
           <!--<input type="text" class="form-control" name="AIuser_input">  -->       
-           <img src="{% static 'soulsit/chatbox.png' %}" alt="chatbox" style="width:100px; hight:100px;" class="fixed-bottom"/>
      </form>
      {% if chtextatbot_response %}
       <div>
