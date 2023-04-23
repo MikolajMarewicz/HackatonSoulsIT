@@ -81,14 +81,14 @@ def profile(request):
 
 #################chatbot##########
 
-api_key = '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'
+api_key = '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'
 openai.api_key = api_key
 
 def chatbot(request):
     chatbot_response = None
     if api_key is not None and request.method == 'POST':
         AIuser_input = request.POST.get('AIuser_input')
-        prompt = "In your project, based on the description '" + AIuser_input + "', what specialist roles should you have?",
+        prompt = "In your project, based on the description '" + AIuser_input + "', what specialist roles should you have?,  enumerate them",
         
         response = openai.Completion.create(
             engine = 'text-davinci-003',
@@ -113,9 +113,24 @@ def articlemain(request):
 def article1(request):
     return render(request, 'article1.html')
 
+def article2(request):
+    return render(request, 'article2.html')
+
+def article3(request):
+    return render(request, 'article3.html')
+
+
+
+
+
+
+
+
 def project(request):
     return render(request, 'project.html')
 
 def badgesmain(request):
     return render(request, 'badgesmain.html')
 
+def learn(request):
+    return render(request, 'learn.html')

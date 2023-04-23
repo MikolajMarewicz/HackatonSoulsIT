@@ -1,0 +1,14 @@
+{% block content %}
+<h3>opisz swój projekt</h3>
+<form method="post">
+{% csrf_token %}
+    <input type="text" class="form-control" name="AIuser_input">
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+</form>
+{% if chtextatbot_response %}
+    <div>
+        {{ chtextatbot_response | safe }}
+    </div>
+{% endif %}
+
+{% endblock content %}

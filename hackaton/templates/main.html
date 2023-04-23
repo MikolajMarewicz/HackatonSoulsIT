@@ -50,7 +50,7 @@
                   <p> Eum quam harum rem quae praesentium est voluptatem porro! Est numquam fugiat a expedita magni est illo velit!<br>
                      Et quas omnis saut culpa amet eos volupsstatem necessitatibus cum doloribus expedita. </p>
                   <div>
-                     <a class="btn btn-login btn-active" href="article1.html">Read more</a>
+                     <a class="btn btn-login btn-active" href="{% url 'article1' %}">Read more</a>
                   </div>
     </div>
     <div class="col">
@@ -87,8 +87,17 @@
             <p><i>Articles</i> - as shown above, a whole lot of practical informations.</p>
         </div>
         
-     <!-- Chatbox -->        
-        <img src="{% static 'soulsit/chatbox.png' %}" alt="chatbox" style="width:100px; hight:100px;" class="fixed-bottom"/>            
+     <!-- Chatbox -->
+   <form method="post">
+      {% csrf_token %}
+         <input type="text" class="form-control" name="AIuser_input">        
+         <img src="{% static 'soulsit/chatbox.png' %}" alt="chatbox" style="width:100px; hight:100px;" class="fixed-bottom"/>
+   </form>
+   {% if chtextatbot_response %}
+    <div>
+        {{ chtextatbot_response | safe }}
+    </div>
+{% endif %}            
     </body>
     
     <div id="footer" style="background-color:#0491b4; padding:20px; text-align: center; width: 100%">
