@@ -1,7 +1,8 @@
   <!doctype html>
 {% load static %}
 <html lang="en">
-<link rel="shortcut icon" href="logo.png">
+  <link rel="shortcut icon" href="{% static 'soulsit/Logo.png' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -260,17 +261,18 @@
                
                
                
-     <!-- Chatbox -->        
-        <img src="{% static 'soulsit/chatbox.png' %}" alt="chatbox" style="width:100px; hight:100px;" class="fixed-bottom"/>            
-    </body>
-    
-    <div id="footer" style="background-color:#0491b4; padding:20px; text-align: center; width: 100%">
-        <a class="btn btn-login btn-active" href="https://www.datacamp.com"><img src="{% static "soulsit/partner1.png" %}" alt="Logo DataCamp" style="width:100px; height:50px"/></a>
-        <a class="btn btn-login btn-active" href="https://swps.pl"><img src="{% static "soulsit/partner2.png" %}" alt="Logo SWPS" style="width:150px; height:50px"/></a>
-        <a class="btn btn-login btn-active" href="https://www.coursera.org"><img src="{% static "soulsit/partner3.png" %}" alt="Logo Coursera" style="width:100px; height:50px"/></a>
-        <p style="margin-top:20px">SoulsIT Sp.z o.o.<br>
-        Chodakowska 19/31, 03-815 Warszawa<br>
-        +48 123 456 789 <br><a href = "mailto: abc@example.com">abc@example.com</a> </p>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-</html>               
+  <!-- Chatbox --> 
+  <a class="btn btn-login btn-active" href="{% url "chatbot" %}"><img src="{% static 'soulsit/chatbox.png' %}" alt="chatbox" style="width:100px; hight:100px;" class="fixed-bottom"/>
+</form>          
+</body>
+
+<div id="footer" style="background-color:#0491b4; padding:20px; text-align: center; width: 100%">
+    <a class="btn btn-login btn-active" href="https://www.datacamp.com"><img src="{% static "soulsit/partner1.png" %}" alt="Logo DataCamp" style="width:100px; height:50px"/></a>
+    <a class="btn btn-login btn-active" href="https://swps.pl"><img src="{% static "soulsit/partner2.png" %}" alt="Logo SWPS" style="width:150px; height:50px"/></a>
+    <a class="btn btn-login btn-active" href="https://www.coursera.org"><img src="{% static "soulsit/partner3.png" %}" alt="Logo Coursera" style="width:100px; height:50px"/></a>
+    <p style="margin-top:20px">SoulsIT Sp.z o.o.<br>
+    Chodakowska 19/31, 03-815 Warszawa<br>
+    +48 123 456 789 <br><a href = "mailto: abc@example.com">abc@example.com</a> </p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</html>           
