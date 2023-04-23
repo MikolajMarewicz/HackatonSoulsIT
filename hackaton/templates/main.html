@@ -2,7 +2,8 @@
 {% load crispy_forms_tags %}
 <!doctype html>
 <html lang="en">
-<link rel="shortcut icon" href="{% static "soulsit/Logo.png" %}">
+   <link rel="shortcut icon" href="{% static 'soulsit/Logo.png' %}">
+   <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -87,7 +88,7 @@
         </div>
         
      <!-- Chatbox --> 
-      <a class="btn btn-login btn-active" href="{% url "chatbot" %}"><img src="{% static 'soulsit/chatbox.png' %}" alt="chatbox" style="width:100px; hight:100px;" class="fixed-bottom"/>
+      <a class="btn btn-login btn-active right" href="{% url "chatbot" %}"><img src="{% static 'soulsit/chatbox.png' %}" alt="chatbox" style="width:100px; hight:100px;" class="fixed-bottom"/>
    </form>          
     </body>
     
