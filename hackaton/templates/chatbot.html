@@ -1,14 +1,23 @@
-{% block content %}
-<h3>opisz swój projekt</h3>
-<form method="post">
-{% csrf_token %}
-    <input type="text" class="form-control" name="AIuser_input">
-    <button type="submit" class="btn btn-primary mt-3">Submit</button>
-</form>
-{% if chtextatbot_response %}
-    <div>
-        {{ chtextatbot_response | safe }}
-    </div>
-{% endif %}
+<!DOCTYPE html>
 
-{% endblock content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OPEN AI TEXT DAVINICI 003</title>
+</head>
+<body>
+    <h1>OPEN AI TEXT DAVINICI 003</h1>
+    <form  method="post">
+        {% csrf_token %}
+        <label for="AIuser_input">Enter your input:</label>
+        <input type="text" id="AIuser_input" name="AIuser_input">
+        <button type="submit">Submit</button>
+    </form>
+    <form method="post">
+    {% csrf_token %}
+    {% for i in chatbot_response %}
+    <h2>Result:</h2>
+    <p>{{ i.text }}</p>
+    {%  endfor  %}
+</body>
+</html>
