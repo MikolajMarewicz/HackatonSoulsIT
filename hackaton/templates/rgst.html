@@ -13,13 +13,14 @@
 <center>
   <form method="POST" style="padding:30px">
     {% csrf_token %}
-    <fieldset class="form-group">
+    <fieldset class="form-group" style="border:none; width:400px">
       {{form|crispy}}
     </fieldset>
         <center>
-   <br><button style="width:100px; font-size:15px" class="cbtn btn-primary btn-lg btn-block" type="submit">Register</button>
+   <br><button type="submit" class="btn btn-primary">Sing in</button>
+
         </center>
-    
+        <br>
       <sub><a href="{% url 'login' %}" style="text-decoration: none; color: #0491b4; padding:2%; cursor:pointer;">Already have an account ?</a></sub>
   </form>
 <center>    
