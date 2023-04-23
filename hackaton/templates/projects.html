@@ -63,6 +63,7 @@
 <div class="row align-items-end" style="padding-top:30px">
     
         <!-- Content1 -->
+         
     <div class="col">
 <h3>White beet optimalization proces</h3>
                   <br>
@@ -78,6 +79,9 @@
     <div class="col">
 <h3>Allego AI implementation</h3>
                   <br>
+                  {%for i in zmienna%}
+                  {{i.project_name}}
+                  {%endfor%}     
         <img src="{%static 'soulsit/project2.png'%}" alt="project photo" style="width:100%;"/>
                 <br>
                   <p> Eum quam harum rem quae praesentium est voluptatem porro! Est numquam fugiat a expedita magni est illo velit!<br>
@@ -88,9 +92,8 @@
                   <br>
     </div>
     <div class="col">
-      {%for i in zmienna%} 
-                  {{i.project_name}}
-                  {%endfor%}     
+      
+                  
                   <h3>Emotional intelligence app</h3>
                   <br>
         <img src="{%static 'soulsit/project3.png'%}" alt="project photo" style="width:100%;"/>
@@ -101,6 +104,7 @@
                      <a class="btn btn-login btn-active" href="#">See project</a>
                   </div>
                   <br>
+                  
         </div>
         </div>          
     <!-- Chatbox -->        
