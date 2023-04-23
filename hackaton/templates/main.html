@@ -22,7 +22,6 @@
                   <li class="nav-item"><a class="btn btn-login btn-active" href="{% url "soulsit:projects" %}">Projects</a></li>
                   <li class="nav-item"><a class="btn btn-login btn-active" href="{% url "soulsit:profile" %}">Profile</a></li>
             {% else %}
-                  <li class="nav-item"><a class="btn btn-login btn-active" href="#">Articles</a></li>
                   <li class="nav-item"><a class="btn btn-login btn-active" href="{% url "soulsit:login" %}">Log in</a></li>
                   <li class="nav-item"><a class="btn btn-login btn-active" href="{% url "soulsit:register" %}">Sign in</a></li>
             {% endif %}
@@ -89,15 +88,10 @@
         
      <!-- Chatbox -->
    <form method="post">
-      {% csrf_token %}
+      
          <input type="text" class="form-control" name="AIuser_input">        
-         <img src="{% static 'soulsit/chatbox.png' %}" alt="chatbox" style="width:100px; hight:100px;" class="fixed-bottom"/>
-   </form>
-   {% if response %}
-    <div>
-        {{ response | safe }}
-    </div>
-{% endif %}            
+         <img href="{% url "soulsit:chatbot" %}" src="{% static 'soulsit/chatbox.png' %}" alt="chatbox" style="width:100px; hight:100px;" class="fixed-bottom"/>
+   </form>          
     </body>
     
     <div id="footer" style="background-color:#0491b4; padding:20px; text-align: center; width: 100%">
