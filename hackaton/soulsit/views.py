@@ -160,7 +160,11 @@ def article2(request):
 def article3(request):
     return render(request, 'article3.html')
 
+def badgesmain(request):
+    return render(request, 'badgesmain.html')
 
+def learn(request):
+    return render(request, 'learn.html')
 
 
 
