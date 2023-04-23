@@ -30,8 +30,12 @@ urlpatterns = [
     path('profile/', user_view.profile, name='profile'),
     path('projects/', user_view.projects, name='projects'),
     path('articlemain/', user_view.articlemain, name='articlemain'),
-    path('articlemain/article1/', user_view.article1, name='article1'),
+    path('article1/', user_view.article1, name='article1'),
+    path('article2/', user_view.article2, name='article2'),
+    path('article3/', user_view.article3, name='article3'),
     path('project/', user_view.project, name="project" ),
-    path('articlemain/badgesmain', user_view.badgesmain, name="badgesmain"),
-    path('badgesmain/', user_view.badgesmain, name="badgesmain" )
+    path('badgesmain/', user_view.badgesmain, name="badgesmain" ),
+    path('chatbot/', user_view.chatbot, name='chatbot'),
+    path('learn', user_view.learn, name='learn')
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

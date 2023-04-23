@@ -16,13 +16,13 @@
               <!-- Menu - responsive -->
       <nav class="navbar navbar-expand-lg fixed-top" style="background-color:#0491b4">
          <div class="container" style ="height:100px;">
-            <a class="btn btn-login btn-active" href="main.html"><img src="{%static 'soulsit/logo.png'%}" alt="logo" style="width:100px; height:100px"/></a>
+            <a class="btn btn-login btn-active" href="{% url 'home'%}"><img src="{%static 'soulsit/logo.png'%}" alt="logo" style="width:100px; height:100px"/></a>
                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="btn btn-login btn-active" href="articlemain.html">Articles</a></li>
-                    <li class="nav-item"><a class="btn btn-login btn-active" href="#footer">Contact</a></li>
-                    <li class="nav-item"><a class="btn btn-login btn-active" href="badgesmain">Badges</a></li>
-                    <li class="nav-item"><a class="btn btn-login btn-active" href="#">Log in</a></li>
-                    <li class="nav-item"><a class="btn btn-login btn-active" href="#">Sign in</a></li>
+                  <li class="nav-item"><a class="btn btn-login btn-active" href="{% url 'articlemain'%}">Articles</a></li>
+                  <li class="nav-item"><a class="btn btn-login btn-active" href="#footer">Contact</a></li>
+                  <li class="nav-item"><a class="btn btn-login btn-active" href="{% url 'badgesmain'%}">Badges</a></li>
+                  <li class="nav-item"><a class="btn btn-login btn-active" href="{% url 'login'%}">Log in</a></li>
+                  <li class="nav-item"><a class="btn btn-login btn-active" href="{% url 'register'%}">Sign in</a></li>
                </ul>
             </div>
       </nav>
@@ -47,10 +47,10 @@
                   <br>
         <img src="{%static 'soulsit/img1.png'%}" alt="photo1" style="width:100%;"/>
                 <br>
-                  <p> Eum quam harum rem quae praesentium est voluptatem porro! Est numquam fugiat a expedita magni est illo velit!<br>
-                     Et quas omnis saut culpa amet eos volupsstatem necessitatibus cum doloribus expedita. </p>
+                  <p> planowania, organizowania, koordynowania i kontroli działań mających na celu osiągnięcie konkretnych 
+                     celów projektowych w określonym czasie, za przydzielony budżet i z wykorzystaniem dostępnych zasobów </p>
                   <div>
-                     <a class="btn btn-login btn-active" href="article1">Read more</a>
+                     <a class="btn btn-login btn-active" href="{% url 'article1' %}">Read more</a>
                   </div><br>
     </div>
     <div class="col">
@@ -58,10 +58,10 @@
                   <br>
         <img src="{%static 'soulsit/img2.png'%}" alt="photo2" style="width:100%;"/>
                 <br>
-                  <p> Eum quam harum rem quae praesentium est voluptatem porro! Est numquam fugiat a expedita magni est illo velit!<br>
-                     Et quas omnis aut culpa amet eos voluptatem necessitatibus cum doloribus expedita. </p>
+                  <p>  tworzenia aplikacji komputerowych, systemów operacyjnych, gier, stron internetowych,
+                      bądź innych programów za pomocą języków programowania oraz algorytmów, które określają</p>
                   <div>
-                     <a class="btn btn-login btn-active" href="article2.html">Read more</a>
+                     <a class="btn btn-login btn-active" href="{% url 'article2'%}">Read more</a>
                   </div>
                   <br>
     </div>
@@ -70,10 +70,8 @@
                   <br>
         <img src="{%static 'soulsit/img3.png'%}" alt="photo3" style="width:100%;"/>
                 <br>
-                  <p> Eum quam harum rem quae praesentium est voluptatem porro! Est numquam fugiat a expedita magni est illo velit!<br>
-                     Et quas omnis aut culpa amet eos voluptatem necessitatibus cum doloribus expedita. </p>
-                  <div>
-                     <a class="btn btn-login btn-active" href="article3.html">Read more</a>
+                  <p>Każdy menadżer projektów IT potrzebuje silnych umiejętności przywódczych, efektywnej komunikacji, umiejętności krytycznego myślenia, zdolności do adaptacji, ekspertyzy w planowaniu projektów, wiedzy o zarządzaniu ryzykiem.
+                     <a class="btn btn-login btn-active" href="{% url 'article3'%}">Read more</a>
                   </div>
                   <br>
         </div>
