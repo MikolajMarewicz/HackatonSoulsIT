@@ -86,11 +86,8 @@
             <p><i>Articles</i> - as shown above, a whole lot of practical informations.</p>
         </div>
         
-     <!-- Chatbox -->
-   <form method="post">
-      
-         <input type="text" class="form-control" name="AIuser_input">        
-         <img href="{% url "soulsit:chatbot" %}" src="{% static 'soulsit/chatbox.png' %}" alt="chatbox" style="width:100px; hight:100px;" class="fixed-bottom"/>
+     <!-- Chatbox --> 
+      <a class="btn btn-login btn-active" href="{% url "soulsit:chatbot" %}"><img src="{% static 'soulsit/chatbox.png' %}" alt="chatbox" style="width:100px; hight:100px;" class="fixed-bottom"/>
    </form>          
     </body>
     
